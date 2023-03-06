@@ -1,0 +1,24 @@
+<div id="<%= dom_id book %>">
+  <p>
+    <strong>Name:</strong>
+    <%= book.name %>
+  </p>
+
+  <p>
+    <strong>Page no:</strong>
+    <%= book.page_no %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= book.price %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <% if book.book_image.attached?  %>
+      <%#= image_tag(book.book_image) %>
+      <%=  image_tag(book.book_image.variant(resize_to_limit: [150, 150])) %>
+    <%end%>
+  </p>
+</div>
